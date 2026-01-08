@@ -1,0 +1,26 @@
+{
+  "name": "portfolio-asep",
+  "version": "2.0.0",
+  "description": "Modern portfolio website with glassmorphism design and dark/light mode",
+  "main": "src/js/script.js",
+  "scripts": {
+    "start": "Open portfolio in your browser",
+    "dev": "Open index.html in your preferred browser",
+    "build": "Minify CSS and JS files (optional)"
+  },
+  "keywords": [
+    "portfolio",
+    "glassmorphism",
+    "dark-mode",
+    "responsive",
+    "vanilla-js"
+  ],
+  "author": "Asep Kurniawan",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/portfolio"
+  },
+  "devDependencies": {},
+  "dependencies": {}
+}
