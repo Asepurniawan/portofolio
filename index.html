@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio - Asep Kurniawan</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+        <div class="loader">
+            <div class="spinner"></div>
+            <p>Loading Portfolio...</p>
+        </div>
+    </div>
+
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Theme Badge -->
+    <div class="theme-badge" id="themeBadge">
+        <i class="fas fa-sun"></i>
+        <span>Light Mode</span>
+    </div>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-avatar">
+                <img src="202410370110122.jpg" alt="Avatar" class="sidebar-avatar-img">
+                <div class="status-indicator"></div>
+            </div>
+            <h3 class="sidebar-name">Asep Kurniawan</h3>
+            <p class="sidebar-title">Mahasiwa</p>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="#home" class="sidebar-link active" data-section="home">
+                <i class="fas fa-home"></i>
+                <span>Beranda</span>
+            </a>
+            <a href="#about" class="sidebar-link" data-section="about">
+                <i class="fas fa-user"></i>
+                <span>Tentang</span>
+            </a>
+            <a href="#education" class="sidebar-link" data-section="education">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Pendidikan</span>
+            </a>
+            <a href="#skills" class="sidebar-link" data-section="skills">
+                <i class="fas fa-code"></i>
+                <span>Keahlian</span>
+            </a>
+            <a href="#contact" class="sidebar-link" data-section="contact">
+                <i class="fas fa-envelope"></i>
+                <span>Kontak</span>
+            </a>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="social-icons">
+                <a href="#" class="social-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Mobile Header -->
+    <header class="mobile-header">
+        <button class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <h2 class="mobile-logo">AK</h2>
+        <div class="mobile-actions">
+            <button class="notification-btn">
+                <i class="fas fa-bell"></i>
+                <span class="notification-badge">3</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section id="home" class="hero section-active">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Mahasiswa Aktif</span>
+                    </div>
+                    <h1 class="hero-title">
+                        Halo, Saya <br>
+                        <span class="gradient-text">Asep Kurniawan</span>
+                    </h1>
+                    <p class="hero-subtitle">Mahasiswa</p>
+                    <p class="hero-description">Mahasiswa Teknik Informatika Universitas Muhammadiyah Malang yang passionate dalam menciptakan pengalaman web yang modern dan inovatif.</p>
+                    <div class="hero-actions">
+                        <a href="#contact" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Hubungi Saya
+                        </a>
+                        <a href="#skills" class="btn btn-secondary">
+                            <i class="fas fa-code"></i>
+                            Lihat Keahlian
+                        </a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">Semester 3</span>
+                            <span class="stat-label">Mahasiswa Aktif</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">UMM</span>
+                            <span class="stat-label">Teknik Informatika</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">2024</span>
+                            <span class="stat-label">Angkatan</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-image-wrapper">
+                        <img src="202410370110122.jpg" alt="Profil Foto" class="hero-avatar">
+                        <div class="floating-card card-1">
+                            <i class="fas fa-code"></i>
+                            <span>Clean Code</span>
+                        </div>
+                        <div class="floating-card card-2">
+                            <i class="fas fa-rocket"></i>
+                            <span>Fast Loading</span>
+                        </div>
+                        <div class="floating-card card-3">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>Responsive</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Kenali Saya</span>
+                    <h2 class="section-title">Tentang Saya</h2>
+                    <p class="section-subtitle">Passion, Dedikasi, dan Inovasi</p>
+                </div>
+                <div class="about-content">
+                    <div class="about-card glass-card">
+                        <div class="about-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Pendidikan</h3>
+                        <p>Mahasiswa Teknik Informatika Semester 3 di Universitas Muhammadiyah Malang. Aktif dalam pengembangan teknologi web dan mobile.</p>
+                    </div>
+                    <div class="about-card glass-card">
+                        <div class="about-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3>Keahlian</h3>
+                        <p>Berpengalaman dalam jaringan komputer, hardware maintenance, dan pengembangan aplikasi web modern dengan teknologi terkini.</p>
+                    </div>
+                    <div class="about-card glass-card">
+                        <div class="about-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3>Petualangan</h3>
+                        <p>Mengeksplorasi dunia, memperluas pengalaman, dan mengejar petualangan kemana saja mumpung masih muda dengan semangat membara.</p>
+                    </div>
+                </div>
+                <div class="experience-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h4>Mahasiswa Teknik Informatika</h4>
+                            <span class="timeline-date">2024 - Sekarang</span>
+                            <p>Sedang menjalani pendidikan Semester 3 di Universitas Muhammadiyah Malang, fokus pada pengembangan web dan pemrograman.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h4>Pembelajaran Aktif</h4>
+                            <span class="timeline-date">2024</span>
+                            <p>Terus belajar dan mengembangkan skill dalam bidang web development, jaringan komputer, dan teknologi terkini.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="education">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Riwayat</span>
+                    <h2 class="section-title">Pendidikan</h2>
+                    <p class="section-subtitle">Perjalanan akademik saya</p>
+                </div>
+                
+                <div class="education-timeline">
+                    <div class="education-item glass-card">
+                        <div class="education-header">
+                            <div class="education-icon">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <div class="education-info">
+                                <h3>Universitas Muhammadiyah Malang</h3>
+                                <span class="education-degree">S1 - Teknik Informatika</span>
+                                <span class="education-period">
+                                    <i class="far fa-calendar"></i>
+                                    2024 - Sekarang (Semester 3)
+                                </span>
+                            </div>
+                            <div class="education-status status-active">
+                                <i class="fas fa-circle"></i>
+                                Aktif
+                            </div>
+                        </div>
+                        <div class="education-description">
+                            <p>Sedang menempuh pendidikan sarjana dengan fokus pada pengembangan perangkat lunak, pemrograman web, jaringan komputer, dan basis data. Aktif dalam kegiatan pembelajaran dan pengembangan skill teknologi.</p>
+                            <div class="education-highlights">
+                                <div class="highlight-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Pemrograman Web & Mobile</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Jaringan Komputer</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Basis Data</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Algoritma & Struktur Data</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="education-item glass-card">
+                        <div class="education-header">
+                            <div class="education-icon">
+                                <i class="fas fa-school"></i>
+                            </div>
+                            <div class="education-info">
+                                <h3>SMK Muhammadiyah 07 Gondanglegi</h3>
+                                <span class="education-degree">Sekolah Menengah Kejuruan</span>
+                                <span class="education-period">
+                                    <i class="far fa-calendar"></i>
+                                    2021 - 2024
+                                </span>
+                            </div>
+                            <div class="education-status status-completed">
+                                <i class="fas fa-check-circle"></i>
+                                Selesai
+                            </div>
+                        </div>
+                        <div class="education-description">
+                            <p>Menyelesaikan pendidikan SMK dengan fokus pada teknologi informasi dan jaringan komputer. Mendapatkan fondasi kuat dalam hardware maintenance, networking, dan dasar pemrograman.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="achievement-section">
+                    <h3 class="achievement-title">
+                        <i class="fas fa-trophy"></i>
+                        Sertifikasi & Pelatihan
+                    </h3>
+                    <div class="achievement-grid">
+                        <div class="achievement-card glass-card">
+                            <i class="fas fa-mobile-alt"></i>
+                            <h4>Samsung Tech Institute</h4>
+                            <p>Program pelatihan teknologi Samsung dengan fokus pada mobile development dan inovasi digital</p>
+                        </div>
+                        <div class="achievement-card glass-card">
+                            <i class="fas fa-industry"></i>
+                            <h4>United Tractor</h4>
+                            <p>Pelatihan industrial dan technical skills dari salah satu perusahaan terkemuka Indonesia</p>
+                        </div>
+                        <div class="achievement-card glass-card">
+                            <i class="fas fa-briefcase"></i>
+                            <h4>Magang PT Iconnet Indonesia</h4>
+                            <p>Pengalaman magang di perusahaan BUMN, mengembangkan skill praktis di industri teknologi informasi</p>
+                        </div>
+                        <div class="achievement-card glass-card">
+                            <i class="fas fa-star"></i>
+                            <h4>Pengalaman Profesional</h4>
+                            <p>Bekerja di PT Iconnet Indonesia, mendapatkan pengalaman langsung dalam implementasi teknologi enterprise</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="experience-section">
+                    <h3 class="experience-title">
+                        <i class="fas fa-briefcase"></i>
+                        Pengalaman Kerja & Magang
+                    </h3>
+                    <div class="experience-timeline-work">
+                        <div class="work-experience-item glass-card">
+                            <div class="work-exp-header">
+                                <div class="work-exp-icon">
+                                    <i class="fas fa-building"></i>
+                                </div>
+                                <div class="work-exp-info">
+                                    <h4>PT Iconnet Indonesia</h4>
+                                    <span class="work-exp-position">Magang & Pengalaman Kerja</span>
+                                    <span class="work-exp-period">
+                                        <i class="far fa-calendar"></i>
+                                        Periode Magang & Kerja
+                                    </span>
+                                </div>
+                                <div class="bumn-badge">
+                                    <i class="fas fa-check"></i>
+                                    BUMN
+                                </div>
+                            </div>
+                            <div class="work-exp-description">
+                                <p>PT Iconnet Indonesia adalah perusahaan BUMN yang berfokus pada solusi teknologi informasi. Selama periode magang dan bekerja, saya memiliki kesempatan untuk:</p>
+                                <ul class="work-exp-highlights">
+                                    <li><i class="fas fa-check-circle"></i> Mengimplementasikan solusi teknologi enterprise</li>
+                                    <li><i class="fas fa-check-circle"></i> Bekerja dengan sistem dan infrastruktur BUMN</li>
+                                    <li><i class="fas fa-check-circle"></i> Mengembangkan skills profesional dalam lingkungan korporat</li>
+                                    <li><i class="fas fa-check-circle"></i> Kolaborasi dengan tim IT yang berpengalaman</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Kompetensi</span>
+                    <h2 class="section-title">Keahlian Saya</h2>
+                    <p class="section-subtitle">Teknologi yang saya kuasai</p>
+                </div>
+                <div class="learning-message glass-card">
+                    <div class="learning-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3>Dalam Perjalanan Belajar</h3>
+                    <p>Saya masih dalam tahap pembelajaran dan pengembangan diri. Setiap hari adalah kesempatan untuk mempelajari teknologi dan skill baru. Saya berkomitmen untuk terus belajar, berkembang, dan meningkatkan kemampuan teknis saya melalui studi formal, proyek praktis, dan pengalaman langsung di industri.</p>
+                    <div class="learning-focus">
+                        <h4>Fokus Pembelajaran Saat Ini:</h4>
+                        <ul class="learning-list">
+                            <li><i class="fas fa-check-circle"></i> Web Development & Modern Frameworks</li>
+                            <li><i class="fas fa-check-circle"></i> Jaringan Komputer & Infrastructure</li>
+                            <li><i class="fas fa-check-circle"></i> Database Management & Design</li>
+                            <li><i class="fas fa-check-circle"></i> Mobile Development</li>
+                            <li><i class="fas fa-check-circle"></i> Cloud Computing & DevOps</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Mari Terhubung</span>
+                    <h2 class="section-title">Hubungi Saya</h2>
+                    <p class="section-subtitle">Saya siap belajar dan berkembang bersama</p>
+                </div>
+                <div class="contact-wrapper">
+                    <div class="contact-info-section">
+                        <div class="contact-card glass-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <h4>Email</h4>
+                            <a href="mailto:asepkurniawan5288@gmail.com">asepkurniawan5288@gmail.com</a>
+                        </div>
+                        <div class="contact-card glass-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <h4>Telepon</h4>
+                            <a href="tel:+6281358578237">+62 813 5857 8237</a>
+                        </div>
+                        <div class="contact-card glass-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <h4>Lokasi</h4>
+                            <p>Malang, Indonesia</p>
+                        </div>
+                    </div>
+                    <form class="contact-form glass-card" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">
+                                    <i class="fas fa-user"></i>
+                                    Nama Lengkap
+                                </label>
+                                <input type="text" id="name" placeholder="Masukkan nama Anda" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">
+                                    <i class="fas fa-envelope"></i>
+                                    Email
+                                </label>
+                                <input type="email" id="email" placeholder="email@example.com" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">
+                                <i class="fas fa-tag"></i>
+                                Subjek
+                            </label>
+                            <input type="text" id="subject" placeholder="Subjek pesan" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">
+                                <i class="fas fa-comment-dots"></i>
+                                Pesan
+                            </label>
+                            <textarea id="message" rows="5" placeholder="Tulis pesan Anda..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">
+                            <i class="fas fa-paper-plane"></i>
+                            Kirim Pesan
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Asep Kurniawan</h3>
+                    <p>Mahasiswa - Informatika UMM</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear">2025</span> Asep Kurniawan. Made with <i class="fas fa-heart"></i> in Indonesia</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
