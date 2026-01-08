@@ -433,6 +433,10 @@ const UtilsModule = {
 // ========== Social Links Module ==========
 const SocialLinksModule = {
     init: function() {
+        // First, remove placeholder links and hide empty containers/cards
+        this.prunePlaceholders();
+
+        // Then, attach click handlers to remaining links for safety
         const links = document.querySelectorAll('.social-icons a, .footer-social a');
         links.forEach(link => {
             link.addEventListener('click', (e) => {
@@ -450,6 +454,47 @@ const SocialLinksModule = {
         if (!url || url === '#') return true;
         const patterns = [/yourusername/i, /@yourchannel/i, /@yourusername/i];
         return patterns.some(re => re.test(url));
+    },
+
+    prunePlaceholders: function() {
+        // Handle containers with social icons
+        const containers = [
+            ...document.querySelectorAll('.social-icons'),
+            ...document.querySelectorAll('.footer-social')
+        ];
+
+        containers.forEach(container => {
+            const anchors = Array.from(container.querySelectorAll('a'));
+            anchors.forEach(a => {
+                const href = a.getAttribute('href') || '';
+                if (this.isPlaceholder(href)) {
+                    a.remove();
+                }
+            });
+
+            const remaining = container.querySelectorAll('a').length;
+
+            if (remaining === 0) {
+                // Hide specific wrappers to avoid empty space
+                const contactCard = container.closest('.contact-card');
+                const sidebarFooter = container.closest('.sidebar-footer');
+                const isFooterSocial = container.classList.contains('footer-social');
+
+                if (contactCard) {
+                    // Hide the entire contact card if no social links
+                    contactCard.style.display = 'none';
+                } else if (sidebarFooter) {
+                    // Hide sidebar footer if no social links
+                    sidebarFooter.style.display = 'none';
+                } else if (isFooterSocial) {
+                    // Hide footer social wrapper
+                    container.style.display = 'none';
+                } else {
+                    // Fallback: remove empty container
+                    container.remove();
+                }
+            }
+        });
     }
 };
 
