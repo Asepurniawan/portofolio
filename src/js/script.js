@@ -430,6 +430,29 @@ const UtilsModule = {
     }
 };
 
+// ========== Social Links Module ==========
+const SocialLinksModule = {
+    init: function() {
+        const links = document.querySelectorAll('.social-icons a, .footer-social a');
+        links.forEach(link => {
+            link.addEventListener('click', (e) => {
+                const url = link.getAttribute('href') || '';
+                const platform = link.getAttribute('aria-label') || 'Sosial Media';
+                if (this.isPlaceholder(url)) {
+                    e.preventDefault();
+                    NotificationModule.show(`⚠️ Akun ${platform} belum tersedia.`, 'warning');
+                }
+            });
+        });
+    },
+
+    isPlaceholder: function(url) {
+        if (!url || url === '#') return true;
+        const patterns = [/yourusername/i, /@yourchannel/i, /@yourusername/i];
+        return patterns.some(re => re.test(url));
+    }
+};
+
 // ========== INITIALIZATION ==========
 document.addEventListener('DOMContentLoaded', () => {
     console.log('🚀 Initializing Portfolio Application...');
@@ -444,6 +467,7 @@ document.addEventListener('DOMContentLoaded', () => {
     NotificationModule.init();
     ContactFormModule.init();
     AnimationModule.init();
+    SocialLinksModule.init();
 
     console.log('✅ All modules initialized successfully');
 });
