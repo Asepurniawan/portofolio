@@ -498,6 +498,76 @@ const SocialLinksModule = {
     }
 };
 
+// ========== Content Guard Module ==========
+const ContentGuardModule = {
+    init: function() {
+        this.hideEmptyContainers();
+        this.hideEmptySections();
+        this.syncNavLinks();
+        this.ensureActiveSection();
+    },
+
+    hideEmptyContainers: function() {
+        const rules = [
+            { container: '.achievement-grid', item: '.achievement-card', wrapper: '.achievement-section' },
+            { container: '.experience-timeline-work', item: '.work-experience-item', wrapper: '.experience-section' },
+            { container: '.education-timeline', item: '.education-item', wrapper: '#education' },
+            { container: '.hero-stats', item: '.stat-item', wrapper: '.hero-stats' },
+            { container: '.footer-social', item: 'a', wrapper: '.footer-social' },
+        ];
+
+        rules.forEach(rule => {
+            document.querySelectorAll(rule.container).forEach(cont => {
+                const count = cont.querySelectorAll(rule.item).length;
+                if (count === 0) {
+                    const wrap = rule.wrapper === rule.container
+                        ? cont
+                        : cont.closest(rule.wrapper) || cont;
+                    wrap.style.display = 'none';
+                }
+            });
+        });
+    },
+
+    hideEmptySections: function() {
+        const meaningfulSelectors = [
+            '.glass-card', '.timeline-item', '.education-item', '.achievement-card',
+            '.work-experience-item', '.contact-card', '.learning-message',
+            '.hero-content', '.hero-stats'
+        ];
+
+        document.querySelectorAll('section').forEach(sec => {
+            const hasContent = meaningfulSelectors.some(sel => sec.querySelector(sel));
+            if (!hasContent) {
+                sec.style.display = 'none';
+            }
+        });
+    },
+
+    syncNavLinks: function() {
+        const links = document.querySelectorAll('.sidebar-link[data-section]');
+        links.forEach(link => {
+            const id = link.getAttribute('data-section');
+            const sec = document.getElementById(id);
+            if (!sec || getComputedStyle(sec).display === 'none') {
+                link.remove();
+            }
+        });
+    },
+
+    ensureActiveSection: function() {
+        const active = document.querySelector('section.section-active');
+        const visibleSections = Array.from(document.querySelectorAll('section'))
+            .filter(s => getComputedStyle(s).display !== 'none');
+        if (!active || getComputedStyle(active).display === 'none') {
+            if (visibleSections.length > 0) {
+                visibleSections.forEach(s => s.classList.remove('section-active'));
+                visibleSections[0].classList.add('section-active');
+            }
+        }
+    }
+};
+
 // ========== INITIALIZATION ==========
 document.addEventListener('DOMContentLoaded', () => {
     console.log('🚀 Initializing Portfolio Application...');
@@ -513,6 +583,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ContactFormModule.init();
     AnimationModule.init();
     SocialLinksModule.init();
+    ContentGuardModule.init();
 
     console.log('✅ All modules initialized successfully');
 });
