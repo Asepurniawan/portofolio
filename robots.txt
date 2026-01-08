@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Update to your actual domain before publishing
+Sitemap: https://your-domain.example/sitemap.xml
