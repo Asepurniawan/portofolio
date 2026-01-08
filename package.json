@@ -4,9 +4,7 @@
   "description": "Modern portfolio website with glassmorphism design and dark/light mode",
   "main": "src/js/script.js",
   "scripts": {
-    "start": "Open portfolio in your browser",
-    "dev": "Open index.html in your preferred browser",
-    "build": "Minify CSS and JS files (optional)"
+    "build": "echo \"No build step required for this static site\""
   },
   "keywords": [
     "portfolio",
