@@ -203,4 +203,5 @@ const AuthModule = (() => {
     };
 })();
 
-export default AuthModule;
+// Make it available globally
+window.AuthModule = AuthModule;

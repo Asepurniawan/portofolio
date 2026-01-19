@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login System - Test</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .test-section {
+            margin: 20px 0;
+            padding: 20px;
+            background: #f5f5f5;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .test-section h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .test-section p {
+            color: #666;
+            margin: 5px 0;
+            font-size: 0.9rem;
+        }
+
+        .test-button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 5px 5px 5px 0;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .test-button:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+        }
+
+        .result {
+            background: white;
+            border: 2px solid #ddd;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            color: #333;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+
+        .result.success {
+            border-color: #48bb78;
+            background: #f0fff4;
+            color: #22543d;
+        }
+
+        .result.error {
+            border-color: #f56565;
+            background: #fff5f5;
+            color: #742a2a;
+        }
+
+        .result.info {
+            border-color: #3b82f6;
+            background: #eff6ff;
+            color: #1e3a8a;
+        }
+
+        code {
+            background: #eee;
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 Login System - Test Page</h1>
+        <p class="subtitle">Uji fungsionalitas login system</p>
+
+        <div class="test-section">
+            <h3>✅ Test 1: Check Module Load</h3>
+            <p>Verifikasi bahwa AuthModule sudah ter-load</p>
+            <button class="test-button" onclick="testModuleLoad()">
+                <i class="fas fa-check"></i> Test Module Load
+            </button>
+            <div id="result1"></div>
+        </div>
+
+        <div class="test-section">
+            <h3>🔐 Test 2: Open Login Modal</h3>
+            <p>Klik untuk membuka login modal</p>
+            <button class="test-button" onclick="testOpenModal()">
+                <i class="fas fa-sign-in-alt"></i> Open Login Modal
+            </button>
+            <div id="result2"></div>
+        </div>
+
+        <div class="test-section">
+            <h3>✏️ Test 3: Test Login</h3>
+            <p>Login dengan credentials yang benar</p>
+            <button class="test-button" onclick="testLogin()">
+                <i class="fas fa-user-check"></i> Test Login
+            </button>
+            <div id="result3"></div>
+        </div>
+
+        <div class="test-section">
+            <h3>📊 Test 4: Check Login Status</h3>
+            <p>Cek apakah user sudah login</p>
+            <button class="test-button" onclick="testCheckLogin()">
+                <i class="fas fa-info-circle"></i> Check Status
+            </button>
+            <div id="result4"></div>
+        </div>
+
+        <div class="test-section">
+            <h3>👤 Test 5: Get User Info</h3>
+            <p>Ambil informasi user yang sedang login</p>
+            <button class="test-button" onclick="testGetUser()">
+                <i class="fas fa-user-circle"></i> Get User Info
+            </button>
+            <div id="result5"></div>
+        </div>
+
+        <div class="test-section">
+            <h3>🚪 Test 6: Test Logout</h3>
+            <p>Logout dan clear session</p>
+            <button class="test-button" onclick="testLogout()">
+                <i class="fas fa-sign-out-alt"></i> Test Logout
+            </button>
+            <div id="result6"></div>
+        </div>
+
+        <div class="test-section">
+            <h3>🎯 Demo Credentials</h3>
+            <p>
+                Email: <code>asepkurniawan5288@gmail.com</code><br>
+                Password: <code>admin123</code>
+            </p>
+        </div>
+    </div>
+
+    <!-- Import scripts same as main page -->
+    <script src="src/js/modules/auth.js"></script>
+    <script src="src/js/modules/notificationUI.js"></script>
+    <script>
+        function showResult(elementId, message, type = 'info') {
+            const resultDiv = document.getElementById(elementId);
+            const className = type === 'success' ? 'success' : type === 'error' ? 'error' : 'info';
+            resultDiv.innerHTML = `<div class="result ${className}">${message}</div>`;
+        }
+
+        function testModuleLoad() {
+            if (typeof AuthModule !== 'undefined') {
+                showResult('result1', '✅ AuthModule berhasil ter-load', 'success');
+            } else {
+                showResult('result1', '❌ AuthModule tidak ter-load. Cek console untuk error.', 'error');
+            }
+        }
+
+        function testOpenModal() {
+            if (typeof AuthModule !== 'undefined' && typeof AuthModule.openLoginModal === 'function') {
+                AuthModule.openLoginModal();
+                showResult('result2', '✅ Login modal dibuka. Silakan close untuk melanjutkan test.', 'success');
+            } else {
+                showResult('result2', '❌ Tidak bisa membuka modal. AuthModule tidak ter-load.', 'error');
+            }
+        }
+
+        function testLogin() {
+            if (typeof AuthModule !== 'undefined') {
+                // Simulate form submission
+                const email = 'asepkurniawan5288@gmail.com';
+                const password = 'admin123';
+                
+                // Manually login for testing
+                localStorage.setItem('userSession', JSON.stringify({
+                    email: email,
+                    loginTime: new Date().toISOString()
+                }));
+                
+                AuthModule.init();
+                
+                showResult('result3', `✅ Login berhasil dengan email: ${email}`, 'success');
+            } else {
+                showResult('result3', '❌ AuthModule tidak ter-load', 'error');
+            }
+        }
+
+        function testCheckLogin() {
+            if (typeof AuthModule !== 'undefined') {
+                const isLoggedIn = AuthModule.isLoggedIn();
+                if (isLoggedIn) {
+                    showResult('result4', '✅ User sudah login', 'success');
+                } else {
+                    showResult('result4', '⚠️ User belum login', 'info');
+                }
+            } else {
+                showResult('result4', '❌ AuthModule tidak ter-load', 'error');
+            }
+        }
+
+        function testGetUser() {
+            if (typeof AuthModule !== 'undefined') {
+                const user = AuthModule.getCurrentUser();
+                if (user) {
+                    showResult('result5', `✅ User Info:<br>Email: ${user.email}<br>Login Time: ${user.loginTime}`, 'success');
+                } else {
+                    showResult('result5', '⚠️ User belum login, tidak ada info user', 'info');
+                }
+            } else {
+                showResult('result5', '❌ AuthModule tidak ter-load', 'error');
+            }
+        }
+
+        function testLogout() {
+            if (typeof AuthModule !== 'undefined') {
+                AuthModule.logout();
+                showResult('result6', '✅ Logout berhasil. Session dihapus.', 'success');
+            } else {
+                showResult('result6', '❌ AuthModule tidak ter-load', 'error');
+            }
+        }
+
+        // Auto-test on load
+        window.addEventListener('load', () => {
+            console.log('Test page loaded');
+            testModuleLoad();
+        });
+    </script>
+</body>
+</html>

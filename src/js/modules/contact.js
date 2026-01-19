@@ -66,4 +66,5 @@ const ContactFormModule = (() => {
     return { init };
 })();
 
-export default ContactFormModule;
+// Make it available globally
+window.ContactFormModule = ContactFormModule;

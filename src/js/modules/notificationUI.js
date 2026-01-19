@@ -197,4 +197,5 @@ if (document.readyState === 'loading') {
     NotificationUIModule.init();
 }
 
-export default NotificationUIModule;
+// Make it available globally
+window.NotificationUIModule = NotificationUIModule;
