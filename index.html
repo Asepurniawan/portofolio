@@ -31,7 +31,7 @@
     <aside class="sidebar" id="sidebar">
         <div class="sidebar-header">
             <div class="sidebar-avatar">
-                <img src="public/images/202410370110122.jpg" alt="Avatar" class="sidebar-avatar-img">
+                <img src="c:\Users\Sunai\Downloads\WhatsApp Image 2026-01-08 at 22.25.00.jpg" alt="Avatar" class="sidebar-avatar-img">
                 <div class="status-indicator"></div>
             </div>
             <h3 class="sidebar-name">Asep Kurniawan</h3>
@@ -79,12 +79,87 @@
         </button>
         <h2 class="mobile-logo">AK</h2>
         <div class="mobile-actions">
-            <button class="notification-btn">
+            <button class="auth-btn" id="loginBtn" aria-label="Login">
+                <i class="fas fa-sign-in-alt"></i>
+                <span>Login</span>
+            </button>
+            <div class="user-info" id="userInfo" style="display: none;">
+                <span class="user-email" id="userEmail"></span>
+                <button class="auth-btn logout-btn" id="logoutBtn" aria-label="Logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                </button>
+            </div>
+            <button class="notification-btn" id="notificationBtn" aria-label="Notifikasi">
                 <i class="fas fa-bell"></i>
-                <span class="notification-badge">3</span>
+                <span class="notification-badge" id="notificationBadge">3</span>
             </button>
         </div>
     </header>
+
+    <!-- Notification Modal -->
+    <div class="notification-modal" id="notificationModal">
+        <div class="notification-modal-overlay" id="notificationOverlay"></div>
+        <div class="notification-modal-content">
+            <div class="notification-modal-header">
+                <h3>Notifikasi</h3>
+                <button class="notification-modal-close" id="notificationClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="notification-modal-body" id="notificationList">
+                <!-- Notifikasi akan dimuat di sini -->
+            </div>
+            <div class="notification-modal-footer">
+                <button class="btn-clear-all" id="clearAllBtn">Hapus Semua</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="login-modal" id="loginModal">
+        <div class="login-modal-overlay" id="loginOverlay"></div>
+        <div class="login-modal-content">
+            <div class="login-modal-header">
+                <h2>🔐 Login</h2>
+                <button class="login-modal-close" id="closeLoginBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="login-modal-body">
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="loginEmail">
+                            <i class="fas fa-envelope"></i>
+                            Email
+                        </label>
+                        <input type="email" id="loginEmail" placeholder="Masukkan email Anda" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">
+                            <i class="fas fa-lock"></i>
+                            Password
+                        </label>
+                        <input type="password" id="loginPassword" placeholder="Masukkan password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i class="fas fa-sign-in-alt"></i>
+                        Login
+                    </button>
+                </form>
+                <div class="login-demo-info">
+                    <p><strong>Demo Account:</strong></p>
+                    <ul>
+                        <li>Email: <code>asepkurniawan5288@gmail.com</code></li>
+                        <li>Password: <code>admin123</code></li>
+                    </ul>
+                    <p class="text-muted" style="font-size: 0.85rem; margin-top: 10px;">
+                        <i class="fas fa-info-circle"></i> 
+                        Atau gunakan email apapun dengan password: <code>user123</code>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Main Content -->
     <main class="main-content">
@@ -486,6 +561,8 @@
         </div>
     </footer>
 
+    <script src="src/js/modules/auth.js"></script>
+    <script src="src/js/modules/notificationUI.js"></script>
     <script src="src/js/script.js"></script>
 </body>
 </html>

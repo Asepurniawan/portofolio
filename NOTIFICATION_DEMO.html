@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notification System - Test Demo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+        }
+
+        .demo-section {
+            margin-bottom: 30px;
+        }
+
+        .demo-section h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .button-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .button-group.single {
+            grid-template-columns: 1fr;
+        }
+
+        button {
+            padding: 12px 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn-success {
+            background: #48bb78;
+            color: white;
+        }
+
+        .btn-success:hover {
+            background: #38a169;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(72, 187, 120, 0.3);
+        }
+
+        .btn-info {
+            background: #3b82f6;
+            color: white;
+        }
+
+        .btn-info:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+        }
+
+        .btn-warning {
+            background: #f59e0b;
+            color: white;
+        }
+
+        .btn-warning:hover {
+            background: #d97706;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(245, 158, 11, 0.3);
+        }
+
+        .btn-error {
+            background: #ef4444;
+            color: white;
+        }
+
+        .btn-error:hover {
+            background: #dc2626;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(239, 68, 68, 0.3);
+        }
+
+        .btn-danger {
+            background: #6b7280;
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background: #4b5563;
+            transform: translateY(-2px);
+        }
+
+        .divider {
+            height: 1px;
+            background: #e5e7eb;
+            margin: 30px 0;
+        }
+
+        .footer {
+            text-align: center;
+            color: #999;
+            font-size: 0.85rem;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .instruction {
+            background: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid #667eea;
+            color: #374151;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .button-group {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔔 Notification System</h1>
+        <p class="subtitle">Demo untuk menguji sistem notifikasi</p>
+
+        <div class="instruction">
+            <strong>💡 Instruksi:</strong> Klik tombol di bawah untuk menampilkan berbagai tipe notifikasi. 
+            Pastikan Anda membuka file ini di browser dengan sistem notifikasi yang sudah diimplementasikan.
+        </div>
+
+        <!-- Success Notifications -->
+        <div class="demo-section">
+            <h3>✅ Notifikasi Sukses</h3>
+            <div class="button-group">
+                <button class="btn-success" onclick="showSuccessNotif1()">
+                    <i class="fas fa-check-circle"></i>
+                    Sukses Standar
+                </button>
+                <button class="btn-success" onclick="showSuccessNotif2()">
+                    <i class="fas fa-trophy"></i>
+                    Pencapaian
+                </button>
+                <button class="btn-success" onclick="showSuccessNotif3()">
+                    <i class="fas fa-download"></i>
+                    Download Selesai
+                </button>
+                <button class="btn-success" onclick="showSuccessNotif4()">
+                    <i class="fas fa-heart"></i>
+                    Like Berhasil
+                </button>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Info Notifications -->
+        <div class="demo-section">
+            <h3>ℹ️ Notifikasi Informasi</h3>
+            <div class="button-group">
+                <button class="btn-info" onclick="showInfoNotif1()">
+                    <i class="fas fa-info-circle"></i>
+                    Info Standar
+                </button>
+                <button class="btn-info" onclick="showInfoNotif2()">
+                    <i class="fas fa-sync"></i>
+                    Sedang Diproses
+                </button>
+                <button class="btn-info" onclick="showInfoNotif3()">
+                    <i class="fas fa-bell"></i>
+                    Update Tersedia
+                </button>
+                <button class="btn-info" onclick="showInfoNotif4()">
+                    <i class="fas fa-star"></i>
+                    Fitur Baru
+                </button>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Warning Notifications -->
+        <div class="demo-section">
+            <h3>⚠️ Notifikasi Peringatan</h3>
+            <div class="button-group">
+                <button class="btn-warning" onclick="showWarningNotif1()">
+                    <i class="fas fa-exclamation-circle"></i>
+                    Peringatan Umum
+                </button>
+                <button class="btn-warning" onclick="showWarningNotif2()">
+                    <i class="fas fa-battery-quarter"></i>
+                    Baterai Rendah
+                </button>
+                <button class="btn-warning" onclick="showWarningNotif3()">
+                    <i class="fas fa-wifi"></i>
+                    Koneksi Lambat
+                </button>
+                <button class="btn-warning" onclick="showWarningNotif4()">
+                    <i class="fas fa-clock"></i>
+                    Waktu Habis Soon
+                </button>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Error Notifications -->
+        <div class="demo-section">
+            <h3>❌ Notifikasi Error</h3>
+            <div class="button-group">
+                <button class="btn-error" onclick="showErrorNotif1()">
+                    <i class="fas fa-times-circle"></i>
+                    Error Standar
+                </button>
+                <button class="btn-error" onclick="showErrorNotif2()">
+                    <i class="fas fa-ban"></i>
+                    Akses Ditolak
+                </button>
+                <button class="btn-error" onclick="showErrorNotif3()">
+                    <i class="fas fa-wifi-off"></i>
+                    Koneksi Gagal
+                </button>
+                <button class="btn-error" onclick="showErrorNotif4()">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    Peringatan Kritis
+                </button>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Management -->
+        <div class="demo-section">
+            <h3>🎛️ Kelola Notifikasi</h3>
+            <div class="button-group single">
+                <button class="btn-danger" onclick="clearAllNotifications()">
+                    <i class="fas fa-trash"></i>
+                    Hapus Semua Notifikasi
+                </button>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>💡 Untuk menggunakan pada aplikasi Anda, gunakan kode berikut:</p>
+            <p style="font-family: 'Courier New', monospace; margin-top: 10px; background: #f3f4f6; padding: 10px; border-radius: 4px;">
+                NotificationUIModule.addNotification('Judul', 'Pesan', 'success', 'fa-icon');
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Success Notifications
+        function showSuccessNotif1() {
+            if (typeof NotificationUIModule !== 'undefined') {
+                NotificationUIModule.addNotification(
+                    'Operasi Berhasil!',
+                    'Tindakan Anda telah berhasil dijalankan',
+                    'success',
+                    'fa-check-circle'
+                );
+            } else {
+                alert('NotificationUIModule tidak ditemukan. Pastikan Anda membuka halaman di folder proyek.');
+            }
+        }
+
+        function showSuccessNotif2() {
+            if (typeof NotificationUIModule !== 'undefined') {
+                NotificationUIModule.addNotification(
+                    '🏆 Pencapaian Baru!',
+                    'Anda telah mendapatkan achievement baru',
+                    'success',
+                    'fa-trophy'
+                );
+            }
+        }
+
+        function showSuccessNotif3() {
+            if (typeof NotificationUIModule !== 'undefined') {
+                NotificationUIModule.addNotification(
+                    'Download Selesai',
+                    'File telah berhasil diunduh ke perangkat Anda',
+                    'success',
+                    'fa-download'
+                );
+            }
+        }
+
+        function showSuccessNotif4() {
+            if (typeof NotificationUIModule !== 'undefined') {
+                NotificationUIModule.addNotification(
+                    'Like Berhasil Ditambahkan',
+                    'Postingan telah Anda sukai',
+                    'success',
+                    'fa-heart'
+                );
+            }
+        }
+
+        // Info Notifications
+        function showInfoNotif1() {
+            if (typeof NotificationUIModule !== 'undefined') {
+                NotificationUIModule.addNotification(
+                    'Informasi',
+                    'Berikut adalah informasi penting untuk Anda',
+                    'info',
+                    'fa-info-circle'
+                );
+            }
+        }
+
+        function showInfoNotif2() {
+            if (typeof NotificationUIModule !== 'undefined') {
+                NotificationUIModule.addNotification(
+                    'Sedang Diproses',
+                    'Permintaan Anda sedang kami proses, harap menunggu',
+                    'info',
+                    'fa-sync'
+                );
+            }
+        }
+
+        function showInfoNotif3() {
+            if (typeof NotificationUIModule !== 'undefined') {
+                NotificationUIModule.addNotification(
+                    'Update Tersedia',
+                    'Versi terbaru aplikasi sudah siap untuk diunduh',
+                    'info',
+                    'fa-bell'
+                );
+            }
+        }
+
+        function showInfoNotif4() {
+            if (typeof NotificationUIModule !== 'undefined') {
+                NotificationUIModule.addNotification(
+                    '⭐ Fitur Baru Tersedia',
+                    'Kami telah menambahkan fitur baru yang luar biasa',
+                    'info',
+                    'fa-star'
+                );
+            }
+        }
+
+        // Warning Notifications
+        function showWarningNotif1() {
+            if (typeof NotificationUIModule !== 'undefined') {
+                NotificationUIModule.addNotification(
+                    'Peringatan',
+                    'Perhatian! Ada sesuatu yang perlu Anda ketahui',
+                    'warning',
+                    'fa-exclamation-circle'
+                );
+            }
+        }
+
+        function showWarningNotif2() {
+            if (typeof NotificationUIModule !== 'undefined') {
+                NotificationUIModule.addNotification(
+                    'Baterai Rendah',
+                    'Baterai perangkat Anda tersisa kurang dari 20%',
+                    'warning',
+                    'fa-battery-quarter'
+                );
+            }
+        }
+
+        function showWarningNotif3() {
+            if (typeof NotificationUIModule !== 'undefined') {
+                NotificationUIModule.addNotification(
+                    'Koneksi Internet Lambat',
+                    'Kecepatan internet Anda saat ini dibawah rata-rata',
+                    'warning',
+                    'fa-wifi'
+                );
+            }
+        }
+
+        function showWarningNotif4() {
+            if (typeof NotificationUIModule !== 'undefined') {
+                NotificationUIModule.addNotification(
+                    'Waktu Habis Sebentar Lagi',
+                    'Session Anda akan berakhir dalam 5 menit',
+                    'warning',
+                    'fa-clock'
+                );
+            }
+        }
+
+        // Error Notifications
+        function showErrorNotif1() {
+            if (typeof NotificationUIModule !== 'undefined') {
+                NotificationUIModule.addNotification(
+                    'Terjadi Kesalahan',
+                    'Maaf, terjadi kesalahan saat memproses permintaan Anda',
+                    'error',
+                    'fa-times-circle'
+                );
+            }
+        }
+
+        function showErrorNotif2() {
+            if (typeof NotificationUIModule !== 'undefined') {
+                NotificationUIModule.addNotification(
+                    'Akses Ditolak',
+                    'Anda tidak memiliki izin untuk mengakses halaman ini',
+                    'error',
+                    'fa-ban'
+                );
+            }
+        }
+
+        function showErrorNotif3() {
+            if (typeof NotificationUIModule !== 'undefined') {
+                NotificationUIModule.addNotification(
+                    'Koneksi Gagal',
+                    'Tidak dapat terhubung ke server, cek koneksi internet Anda',
+                    'error',
+                    'fa-wifi-off'
+                );
+            }
+        }
+
+        function showErrorNotif4() {
+            if (typeof NotificationUIModule !== 'undefined') {
+                NotificationUIModule.addNotification(
+                    'Peringatan Kritis!',
+                    'Sistem mengalami masalah serius, hubungi dukungan teknis',
+                    'error',
+                    'fa-exclamation-triangle'
+                );
+            }
+        }
+
+        // Management
+        function clearAllNotifications() {
+            if (typeof NotificationUIModule !== 'undefined') {
+                NotificationUIModule.clearAllNotifications();
+                alert('Semua notifikasi telah dihapus');
+            }
+        }
+    </script>
+</body>
+</html>

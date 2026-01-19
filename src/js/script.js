@@ -578,8 +578,10 @@ document.addEventListener('DOMContentLoaded', () => {
     UtilsModule.logConsoleMessage();
     
     ThemeModule.init();
+    AuthModule.init();
     NavigationModule.init();
     NotificationModule.init();
+    NotificationUIModule.init();
     ContactFormModule.init();
     AnimationModule.init();
     SocialLinksModule.init();
