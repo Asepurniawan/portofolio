@@ -1,0 +1,31 @@
+# Place Your Video Here
+
+## Required File: about-bg.mp4
+
+This folder is ready for your video background.
+
+**Current Status:** ⏳ Waiting for video file
+
+**Next Steps:**
+1. Download a video from Pexels or Pixabay
+2. Rename it to `about-bg.mp4`
+3. Place it in this folder
+4. Refresh your browser to see it in action!
+
+**Specifications:**
+- Format: MP4 (H.264)
+- Resolution: 1920x1080 or 1280x720
+- Max Size: 10MB
+- Duration: 10-30 seconds (for smooth looping)
+
+**Recommended Videos:**
+- Technology/coding animations
+- Abstract digital backgrounds
+- Modern workspace scenes
+
+**Where to Download:**
+- https://www.pexels.com/videos/
+- https://pixabay.com/videos/
+- https://www.videvo.net/
+
+Until you add the video, the section will display an animated gradient background as a fallback.

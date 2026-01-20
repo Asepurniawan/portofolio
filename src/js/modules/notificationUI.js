@@ -187,15 +187,3 @@ const NotificationUIModule = (() => {
         clearAllNotifications
     };
 })();
-
-// Auto-initialize when DOM is ready
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
-        NotificationUIModule.init();
-    });
-} else {
-    NotificationUIModule.init();
-}
-
-// Make it available globally
-window.NotificationUIModule = NotificationUIModule;

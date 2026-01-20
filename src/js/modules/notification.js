@@ -52,7 +52,8 @@ const NotificationModule = (() => {
         return colors[type] || colors.info;
     };
 
-    return { show };
+    return { 
+        init: () => {},
+        show 
+    };
 })();
-
-export default NotificationModule;

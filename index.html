@@ -31,7 +31,7 @@
     <aside class="sidebar" id="sidebar">
         <div class="sidebar-header">
             <div class="sidebar-avatar">
-                <img src="c:\Users\Sunai\Downloads\WhatsApp Image 2026-01-08 at 22.25.00.jpg" alt="Avatar" class="sidebar-avatar-img">
+                <img src="public/images/202410370110122.jpg" alt="Avatar" class="sidebar-avatar-img">
                 <div class="status-indicator"></div>
             </div>
             <h3 class="sidebar-name">Asep Kurniawan</h3>
@@ -146,28 +146,20 @@
                         Login
                     </button>
                 </form>
-                <div class="login-demo-info">
-                    <p><strong>Demo Account:</strong></p>
-                    <ul>
-                        <li>Email: <code>asepkurniawan5288@gmail.com</code></li>
-                        <li>Password: <code>admin123</code></li>
-                    </ul>
-                    <p class="text-muted" style="font-size: 0.85rem; margin-top: 10px;">
-                        <i class="fas fa-info-circle"></i> 
-                        Atau gunakan email apapun dengan password: <code>user123</code>
-                    </p>
-                </div>
             </div>
         </div>
     </div>
 
     <!-- Main Content -->
     <main class="main-content">
-
-    <!-- Main Content -->
-    <main class="main-content">
         <!-- Hero Section -->
         <section id="home" class="hero section-active">
+            <div class="section-video-bg">
+                <!-- Video optional: <video autoplay muted loop playsinline>
+                    <source src="public/videos/home-bg.mp4" type="video/mp4">
+                </video> -->
+                <div class="video-overlay"></div>
+            </div>
             <div class="container">
                 <div class="hero-content">
                     <div class="hero-badge">
@@ -208,18 +200,6 @@
                 <div class="hero-image">
                     <div class="hero-image-wrapper">
                         <img src="public/images/202410370110122.jpg" alt="Profil Foto" class="hero-avatar">
-                        <div class="floating-card card-1">
-                            <i class="fas fa-code"></i>
-                            <span>Clean Code</span>
-                        </div>
-                        <div class="floating-card card-2">
-                            <i class="fas fa-rocket"></i>
-                            <span>Fast Loading</span>
-                        </div>
-                        <div class="floating-card card-3">
-                            <i class="fas fa-mobile-alt"></i>
-                            <span>Responsive</span>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -227,6 +207,12 @@
 
         <!-- About Section -->
         <section id="about" class="about">
+            <div class="section-video-bg">
+                <video autoplay muted loop playsinline>
+                    <source src="src/WhatsApp Video 2026-01-20 at 11.31.11.mp4" type="video/mp4">
+                </video>
+                <div class="video-overlay"></div>
+            </div>
             <div class="container">
                 <div class="section-header">
                     <span class="section-badge">Kenali Saya</span>
@@ -283,6 +269,9 @@
 
         <!-- Education Section -->
         <section id="education" class="education">
+            <div class="section-video-bg">
+                <div class="video-overlay"></div>
+            </div>
             <div class="container">
                 <div class="section-header">
                     <span class="section-badge">Riwayat</span>
@@ -426,34 +415,107 @@
 
         <!-- Skills Section -->
         <section id="skills" class="skills">
+            <div class="section-video-bg">
+                <div class="video-overlay"></div>
+            </div>
             <div class="container">
                 <div class="section-header">
-                    <span class="section-badge">Kompetensi</span>
-                    <h2 class="section-title">Keahlian Saya</h2>
-                    <p class="section-subtitle">Teknologi yang saya kuasai</p>
+                    <span class="section-badge">Pembelajaran</span>
+                    <h2 class="section-title">Yang Sedang Saya Pelajari</h2>
+                    <p class="section-subtitle">Fokus pembelajaran selama kuliah di universitas</p>
                 </div>
-                <div class="learning-message glass-card">
-                    <div class="learning-icon">
-                        <i class="fas fa-book-open"></i>
+                <div class="skills-grid">
+                    <!-- Teknologi Web -->
+                    <div class="skill-card glass-card">
+                        <div class="skill-icon">
+                            <i class="fab fa-html5"></i>
+                        </div>
+                        <h4>HTML & CSS</h4>
+                        <p>Dasar pembuatan halaman web</p>
+                        <span class="learning-badge">Sedang Dipelajari</span>
                     </div>
-                    <h3>Dalam Perjalanan Belajar</h3>
-                    <p>Saya masih dalam tahap pembelajaran dan pengembangan diri. Setiap hari adalah kesempatan untuk mempelajari teknologi dan skill baru. Saya berkomitmen untuk terus belajar, berkembang, dan meningkatkan kemampuan teknis saya melalui studi formal, proyek praktis, dan pengalaman langsung di industri.</p>
-                    <div class="learning-focus">
-                        <h4>Fokus Pembelajaran Saat Ini:</h4>
-                        <ul class="learning-list">
-                            <li><i class="fas fa-check-circle"></i> Web Development & Modern Frameworks</li>
-                            <li><i class="fas fa-check-circle"></i> Jaringan Komputer & Infrastructure</li>
-                            <li><i class="fas fa-check-circle"></i> Database Management & Design</li>
-                            <li><i class="fas fa-check-circle"></i> Mobile Development</li>
-                            <li><i class="fas fa-check-circle"></i> Cloud Computing & DevOps</li>
-                        </ul>
+
+                    <div class="skill-card glass-card">
+                        <div class="skill-icon">
+                            <i class="fab fa-js"></i>
+                        </div>
+                        <h4>JavaScript</h4>
+                        <p>Interaktivitas website</p>
+                        <span class="learning-badge">Sedang Dipelajari</span>
                     </div>
+
+                    <div class="skill-card glass-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h4>Web Development</h4>
+                        <p>Pengembangan aplikasi web</p>
+                        <span class="learning-badge">Sedang Dipelajari</span>
+                    </div>
+
+                    <!-- Jaringan Komputer -->
+                    <div class="skill-card glass-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <h4>Jaringan Komputer</h4>
+                        <p>Konsep dan protokol jaringan</p>
+                        <span class="learning-badge">Sedang Dipelajari</span>
+                    </div>
+
+                    <div class="skill-card glass-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h4>Server & Infrastruktur</h4>
+                        <p>Pengelolaan server dan jaringan</p>
+                        <span class="learning-badge">Sedang Dipelajari</span>
+                    </div>
+
+                    <div class="skill-card glass-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>Keamanan Jaringan</h4>
+                        <p>Dasar keamanan sistem</p>
+                        <span class="learning-badge">Sedang Dipelajari</span>
+                    </div>
+
+                    <!-- Database & Programming -->
+                    <div class="skill-card glass-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h4>Database</h4>
+                        <p>SQL dan manajemen data</p>
+                        <span class="learning-badge">Sedang Dipelajari</span>
+                    </div>
+
+                    <div class="skill-card glass-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h4>Pemrograman</h4>
+                        <p>Logika dan algoritma</p>
+                        <span class="learning-badge">Sedang Dipelajari</span>
+                    </div>
+                </div>
+
+                <div class="learning-note glass-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <p>Saya adalah mahasiswa yang sedang aktif belajar dan mengembangkan kemampuan di bidang teknologi web dan jaringan komputer. Semua materi di atas merupakan bagian dari kurikulum pembelajaran saya di universitas.</p>
                 </div>
             </div>
         </section>
 
         <!-- Contact Section -->
         <section id="contact" class="contact">
+            <div class="section-video-bg">
+                <video autoplay muted loop playsinline>
+                    <source src="src/WhatsApp Video 2026-01-20 at 10.31.50.mp4" type="video/mp4">
+                </video>
+                <div class="video-overlay"></div>
+            </div>
             <div class="container">
                 <div class="section-header">
                     <span class="section-badge">Mari Terhubung</span>
@@ -489,12 +551,8 @@
                             </div>
                             <h4>Sosial Media</h4>
                             <div class="social-icons">
-                                <a href="https://github.com/yourusername" aria-label="GitHub" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
-                                <a href="https://www.linkedin.com/in/yourusername" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
-                                <a href="https://x.com/yourusername" aria-label="Twitter" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
-                                <a href="https://www.instagram.com/yourusername" aria-label="Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
-                                <a href="https://www.youtube.com/@yourchannel" aria-label="YouTube" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
-                                <a href="https://www.tiktok.com/@yourusername" aria-label="TikTok" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i></a>
+                                <a href="https://github.com/Asepurniawan" aria-label="GitHub" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                                <a href="https://www.instagram.com/asepkurniawan0208" aria-label="Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
                     </div>
@@ -547,11 +605,8 @@
                     <h3>Asep Kurniawan</h3>
                     <p>Mahasiswa - Informatika UMM</p>
                     <div class="footer-social">
-                        <a href="https://github.com/yourusername" aria-label="GitHub" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/yourusername" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://x.com/yourusername" aria-label="Twitter" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
-                        <a href="https://www.instagram.com/yourusername" aria-label="Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.youtube.com/@yourchannel" aria-label="YouTube" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
+                        <a href="https://github.com/Asepurniawan" aria-label="GitHub" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+                        <a href="https://www.instagram.com/asepkurniawan0208" aria-label="Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
@@ -561,8 +616,16 @@
         </div>
     </footer>
 
-    <script src="src/js/modules/auth.js"></script>
+    <!-- Load all modules first -->
+    <script src="src/js/modules/utils.js"></script>
+    <script src="src/js/modules/theme.js"></script>
+    <script src="src/js/modules/navigation.js"></script>
+    <script src="src/js/modules/notification.js"></script>
     <script src="src/js/modules/notificationUI.js"></script>
+    <script src="src/js/modules/auth.js"></script>
+    <script src="src/js/modules/contact.js"></script>
+    <script src="src/js/modules/animation.js"></script>
+    <!-- Load main script last -->
     <script src="src/js/script.js"></script>
 </body>
 </html>

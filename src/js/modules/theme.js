@@ -119,5 +119,3 @@ const ThemeModule = (() => {
         getCurrentTheme: () => html.getAttribute('data-theme') || 'light'
     };
 })();
-
-export default ThemeModule;

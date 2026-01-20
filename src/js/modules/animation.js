@@ -78,5 +78,3 @@ const AnimationModule = (() => {
 
     return { init };
 })();
-
-export default AnimationModule;

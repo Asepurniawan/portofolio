@@ -47,6 +47,12 @@ const NavigationModule = (() => {
 
     const openSidebar = () => {
         if (sidebar) sidebar.classList.add('active');
+        // Show a brief stacked loading overlay when opening the menu (mobile focus)
+        const menuLoading = document.getElementById('menuLoading');
+        if (menuLoading) {
+            menuLoading.classList.add('active');
+            setTimeout(() => menuLoading.classList.remove('active'), 500);
+        }
     };
 
     const closeSidebar = () => {
@@ -84,5 +90,3 @@ const NavigationModule = (() => {
         closeSidebar
     };
 })();
-
-export default NavigationModule;

@@ -2,11 +2,7 @@
 
 const AuthModule = (() => {
     const SESSION_KEY = 'userSession';
-    const DEMO_ACCOUNTS = [
-        { email: 'asepkurniawan5288@gmail.com', password: 'admin123' },
-        { email: 'user@example.com', password: 'user123' },
-        { email: 'test@email.com', password: 'test123' }
-    ];
+    const DEMO_ACCOUNTS = [];
 
     let currentUser = null;
 
@@ -202,6 +198,3 @@ const AuthModule = (() => {
         checkAuthForContact
     };
 })();
-
-// Make it available globally
-window.AuthModule = AuthModule;

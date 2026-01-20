@@ -416,4 +416,3 @@ window.addEventListener('scroll', () => {
 // ========== Console Easter Egg ==========
 console.log('%c👋 Hello Developer!', 'color: #667eea; font-size: 20px; font-weight: bold;');
 console.log('%cLooking for something? Feel free to reach out!', 'color: #764ba2; font-size: 14px;');
-console.log('%c📧 asepkurniawan5288@gmail.com', 'color: #48bb78; font-size: 12px;');

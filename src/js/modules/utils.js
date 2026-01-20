@@ -37,13 +37,17 @@ const UtilsModule = (() => {
         };
     };
 
+    const logConsoleMessage = () => {
+        console.log('%c🚀 Portfolio Website', 'color: #667eea; font-size: 20px; font-weight: bold;');
+        console.log('%cDeveloped by Asep Kurniawan', 'color: #4a5568; font-size: 14px;');
+    };
+
     return {
         showLoadingScreen,
         updateYear,
         scrollToTop,
         isScrolledToBottom,
-        debounce
+        debounce,
+        logConsoleMessage
     };
 })();
-
-export default UtilsModule;
