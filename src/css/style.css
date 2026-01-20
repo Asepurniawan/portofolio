@@ -247,7 +247,7 @@ body * {
 /* Theme Badge */
 .theme-badge {
     position: fixed;
-    bottom: 30px;
+    bottom: 100px;
     left: 30px;
     display: flex;
     align-items: center;
@@ -2383,7 +2383,7 @@ section.section-active {
     
     .theme-badge {
         left: 20px;
-        bottom: 20px;
+        bottom: 90px;
         padding: 0.5rem 1rem;
         font-size: 0.8rem;
     }
